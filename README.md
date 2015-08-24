@@ -21,7 +21,7 @@ HTML, CSS, JQuery/Javascript, gifs
 
 ###Existing features
 *What features does your new racing app have?*
-Two Nyan Cats can race each other against a space background. Players will enter their names to appear next to their Nyan Cat. To move Player One, press down on "1", and to move Player Two, press down on "2". The first player that reaches the spaceship wins the round, and the first player that wins 5 rounds wins the game. Press the reset button in order to reset the game. 
+Two Nyan Cats can race each other against a space background. To get started, press "Restart Game". Players will enter their names to appear next to their Nyan Cat. To move Player One, press down on "1", and to move Player Two, press down on "2". The first player that reaches the spaceship wins the round, and the first player that wins 5 rounds wins the game. Press the reset button in order to reset the game. 
 
 
 ###Planned features
