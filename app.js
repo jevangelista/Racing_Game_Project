@@ -1,16 +1,13 @@
 // OOP Racing Game example boilerplate code
 
-
-var player1 = new Player();
-var player2 = new Player();
 var counterPlayer1 = 0;
 var counterPlayer2 = 0;
 var movesToWin = 8;
 var counterRound = 1;
 var player1Wins = 0;
 var player2Wins = 0;
+var maxWinningRounds = 5;
 
-/** $(document).ready(function)() { }); */
 
 function Game(player1, player2, track) {
   //Create a new instance of player 1
@@ -71,28 +68,66 @@ Player.prototype.move =
 //See who wins a round, and keeps track of wins and round
 function wins() {
   if (counterPlayer1 > movesToWin) {
-    alert(player1.name + " wins!");
+    alert(player1.name + " ftw!");
     player1Wins ++;
     counterRound ++;
     $('#player1Wins').text(player1Wins);  
-    $('#rounds').text(counterRound); 
+    $('#round-number').text(counterRound); 
+    Track();
+    ultimateWinner();
+
   } else if (counterPlayer2 > movesToWin){
-    alert(player2.name + " wins!");
+    alert(player2.name + " ftw!");
     player2Wins ++;
     counterRound ++;
     $('#player2Wins').text(player2Wins);  
-    $('#rounds').text(counterRound);
+    $('#round-number').text(counterRound);
+    Track();
+    ultimateWinner();
   }
     
 };
+
+//Keeps track of multiple rounds and declares ultimate winner of the game
+function ultimateWinner () {
+  if (player1Wins >= maxWinningRounds) {
+      alert(player1.name + " wins it all!");
+      resetGame();
+  } else if (player2Wins >= maxWinningRounds) {
+      alert(player2.name + " wins it all!");
+      resetGame();
+  }
+};
+
+
+//Reset the game
+function resetGame () {
+  player1Wins = 0;
+  player2Wins = 0;
+  counterRound = 1;
+  $('#player1Wins').text(player1Wins);
+  $('#player2Wins').text(player2Wins);
+  $('#round-number').text(counterRound);
+//within resetGame function, customize player name
+  function customizeNames (){
+  var player1name = prompt('Player 1 — what is your name?');
+  $('#name1').text(player1name);
+  var player2name = prompt('Player 2 — what is your name?');
+  $('#name2').text(player2name);
+  };
+  customizeNames();
+};
+
 
 
 
 // A starter Track constructor.
 function Track() {
-    $('.racetrack table tr td').removeClass('player1 player2 rainbow');
+    $('.spacetrack table tr td').removeClass('player1 player2 rainbow');
     $('#trackA1').addClass('player1');
     $('#trackB1').addClass('player2');
+    counterPlayer1 = 0;
+    counterPlayer2 = 0;
 
   //Tracks the cells of the board instance
   //this.$cells = ...
@@ -106,18 +141,15 @@ function Track() {
 var game = new Game();
 game.init();
 
-
-var player1 = new Player('Jamie', $('#trackA1').addClass('player1'));
-var player2 = new Player('James', $('#trackB1').addClass('player2'));
+// Creates new players
+var player1 = new Player("Player 1", $('#trackA1').addClass('player1'));
+var player2 = new Player("Player 2", $('#trackB1').addClass('player2'));
 
 $(function() {
     console.log( "Testing... 1.2.3..." );
-
-
-
     $('button').click( function() {
         Track();
-        console.log('clicked button');
+        resetGame();
     });
 
 
