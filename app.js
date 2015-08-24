@@ -5,6 +5,10 @@ var player1 = new Player();
 var player2 = new Player();
 var counterPlayer1 = 0;
 var counterPlayer2 = 0;
+var movesToWin = 8;
+var counterRound = 1;
+var player1Wins = 0;
+var player2Wins = 0;
 
 /** $(document).ready(function)() { }); */
 
@@ -48,6 +52,7 @@ Player.prototype.move =
   counterPlayer1 ++;
   $('#trackA' + (counterPlayer1 + 1)).addClass('player1');
   $('#trackA' + (counterPlayer1)).removeClass('player1').addClass('rainbow');
+  wins();
 
 
 //Triggers player2 to move when "0" is pressed    
@@ -56,16 +61,36 @@ Player.prototype.move =
     counterPlayer2 ++;
   $('#trackB' + (counterPlayer2 + 1)).addClass('player2');
   $('#trackB' + (counterPlayer2)).removeClass('player2').addClass('rainbow');
+  wins();
   }
 
 
 
 });
 
+//See who wins a round, and keeps track of wins and round
+function wins() {
+  if (counterPlayer1 > movesToWin) {
+    alert(player1.name + " wins!");
+    player1Wins ++;
+    counterRound ++;
+    $('#player1Wins').text(player1Wins);  
+    $('#rounds').text(counterRound); 
+  } else if (counterPlayer2 > movesToWin){
+    alert(player2.name + " wins!");
+    player2Wins ++;
+    counterRound ++;
+    $('#player2Wins').text(player2Wins);  
+    $('#rounds').text(counterRound);
+  }
+    
+};
+
+
 
 // A starter Track constructor.
 function Track() {
-    $('.racetrack table tr td').removeClass('player1 player2');
+    $('.racetrack table tr td').removeClass('player1 player2 rainbow');
     $('#trackA1').addClass('player1');
     $('#trackB1').addClass('player2');
 
@@ -83,7 +108,7 @@ game.init();
 
 
 var player1 = new Player('Jamie', $('#trackA1').addClass('player1'));
-var player2 = new Player('Beau', $('#trackB1').addClass('player2'));
+var player2 = new Player('James', $('#trackB1').addClass('player2'));
 
 $(function() {
     console.log( "Testing... 1.2.3..." );

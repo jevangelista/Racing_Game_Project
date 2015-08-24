@@ -1,4 +1,6 @@
-/* Style Sheet */body {
+/* Style Sheet */
+
+body {
 	background-image: url('images/space.png');
 	background-size: contain;
 	font-family: "Lucida Console", Monaco, monospace;
@@ -29,6 +31,9 @@ hr {
 .scoreboard {
 	background-color: 000000;
 	border-style: solid 1px black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
 }
 
 .player1 {
@@ -61,8 +66,12 @@ hr {
 }
 
 .finishLine {
-	background-image: url("images/finishlinevertical.png");
-	margin: auto;
+	background-image: url("images/spaceship.jpg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
 }
 
 .btn {
