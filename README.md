@@ -17,9 +17,14 @@ This file is where you will document your project.
 
 ### Technologies Used
 *What technologies did you use while developing this project?*
+HTML, CSS, JQuery/Javascript, gifs
 
 ###Existing features
 *What features does your new racing app have?*
+Two Nyan Cats can race each other against a space background. Players will enter their names to appear next to their Nyan Cat. To move Player One, press down on "1", and to move Player Two, press down on "2". The first player that reaches the spaceship wins the round, and the first player that wins 5 rounds wins the game. Press the reset button in order to reset the game. 
+
 
 ###Planned features
 *What changes would you make to your project if you continued with it in the future?*
+If we were able to continue with our projects in the future, I would definitely love to incorporate more jQuery. Once a player wins the game, I would like to add some kind of  animation that takes up the screen. Also, I would try some of the other extra credit items, like incorporating the countdown, racing against a bot, instant replay, and 3rd party API integration. In terms of customization, in the future, I would like to add a form/input page, where the user can submit their name, as well as select from additional Nyan Cat options (ie. add Ninja Nyan Cat, Old-Timey Nyan Cat as other player options).
+

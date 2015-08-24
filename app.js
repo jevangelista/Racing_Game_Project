@@ -1,14 +1,5 @@
 // OOP Racing Game example boilerplate code
 
-var counterPlayer1 = 0;
-var counterPlayer2 = 0;
-var movesToWin = 8;
-var counterRound = 1;
-var player1Wins = 0;
-var player2Wins = 0;
-var maxWinningRounds = 5;
-
-
 function Game(player1, player2, track) {
   //Create a new instance of player 1
   this.player1 = player1;
@@ -34,6 +25,21 @@ function Player(name, position) {
   this.position = position;
 };
 
+// A starter Track constructor.
+function Track() {
+    $('.spacetrack table tr td').removeClass('player1 player2 rainbow');
+    $('#trackA1').addClass('player1');
+    $('#trackB1').addClass('player2');
+    counterPlayer1 = 0;
+    counterPlayer2 = 0;
+
+  //Tracks the cells of the board instance
+  //this.$cells = ...
+
+  //Store any other properties that board may have below, such as a reset option
+};
+
+
 // Remember: prototypes are shared functions between all game instances
 Player.prototype.move = 
   //update player's position 
@@ -45,7 +51,6 @@ Player.prototype.move =
 
 //Triggers player1 to move when "1" is pressed
   if (move.which == key1) {
-  console.log("Player one pressed");
   counterPlayer1 ++;
   $('#trackA' + (counterPlayer1 + 1)).addClass('player1');
   $('#trackA' + (counterPlayer1)).removeClass('player1').addClass('rainbow');
@@ -54,7 +59,6 @@ Player.prototype.move =
 
 //Triggers player2 to move when "0" is pressed    
   } else if (move.which == key2) {
-    console.log("Player two pressed");
     counterPlayer2 ++;
   $('#trackB' + (counterPlayer2 + 1)).addClass('player2');
   $('#trackB' + (counterPlayer2)).removeClass('player2').addClass('rainbow');
@@ -99,7 +103,6 @@ function ultimateWinner () {
   }
 };
 
-
 //Reset the game
 function resetGame () {
   player1Wins = 0;
@@ -120,23 +123,6 @@ function resetGame () {
 
 
 
-
-// A starter Track constructor.
-function Track() {
-    $('.spacetrack table tr td').removeClass('player1 player2 rainbow');
-    $('#trackA1').addClass('player1');
-    $('#trackB1').addClass('player2');
-    counterPlayer1 = 0;
-    counterPlayer2 = 0;
-
-  //Tracks the cells of the board instance
-  //this.$cells = ...
-
-  //Store any other properties that board may have below, such as a reset option
-};
-
-
-
 // Start the game!
 var game = new Game();
 game.init();
@@ -144,6 +130,15 @@ game.init();
 // Creates new players
 var player1 = new Player("Player 1", $('#trackA1').addClass('player1'));
 var player2 = new Player("Player 2", $('#trackB1').addClass('player2'));
+
+// Variables to store player moves, #number of wins, # of rounds, and max # of wins
+var counterPlayer1 = 0;
+var counterPlayer2 = 0;
+var counterRound = 1;
+var player1Wins = 0;
+var player2Wins = 0;
+var movesToWin = 8;
+var maxWinningRounds = 5;
 
 $(function() {
     console.log( "Testing... 1.2.3..." );
