@@ -1,19 +1,75 @@
 <!DOCTYPE html>
-<html>
 <head>
-  <title>Rrrracing Game</title>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jamie's Racing Game</title>
   <link rel="stylesheet" type="text/css" href="main.css">
-  <!-- Hey, where's the jquery? -->
-  <script type="text/javascript" src="app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="app.js"></script>
 </head>
+
+
 <body>
-  <!-- HTML Body -->
-  <h1>Rrrracing Game</h1>
-  <img src="http://www.cs.utah.edu/~gk/atwork/img/hevequip2.gif" alt="under construction"></img>
-  <!-- Game Board Here -->
-  <!-- Reset button -->
+  <center>
+    <h1> Nyan Racer </h1>
+
+  </center>
+
+
+      <h3 id="player1Name">Player One</h3>
+        <div class='racetrack'>
+      <table align="center">
+        <tr id="trackA"> 
+          <td class="block" id="trackA1"></td>
+          <td class="block" id="trackA2"></td>
+          <td class="block" id="trackA3"></td>
+          <td class="block" id="trackA4"></td>
+          <td class="block" id="trackA5"></td>
+          <td class="block" id="trackA6"></td>
+          <td class="block" id="trackA7"></td>
+          <td class="block" id="trackA8"></td>
+          <td class="block" id="trackA9"></td>
+          <td class="block finishLine" id="trackA10"></td>
+        </tr>
+      </table>
+
+      <hr WIDTH="100%" ALIGN="center">
+
+      <table align="center">
+        <tr id="trackB">
+          <td class="block" id="trackB1"></td>
+          <td class="block" id="trackB2"></td>
+          <td class="block" id="trackB3"></td>
+          <td class="block" id="trackB4"> </td>
+          <td class="block" id="trackB5"></td>
+          <td class="block" id="trackB6"></td>
+          <td class="block" id="trackB7"></td>
+          <td class="block" id="trackB8"></td>
+          <td class="block" id="trackB9"></td>
+          <td class="block finishLine" id="trackB10"></td>
+        </tr>
+      </table>
+        </div>
+      <h3 id="player2Name">Player Two</h3>
+
+
+      <br/>
+
+          <center>
+    <div class='buttonHolder'>
+    <button name="button">Reset Game</button>
+    </div>
+
+  </center>
+
+      <center>
+      <h2> Winner of this round: </h2>
+       <h3>Total time: <span id="total-time">00:00</span></h3>
+      <br/>
+    </center>
+
+
+
+
 </body>
-</html>

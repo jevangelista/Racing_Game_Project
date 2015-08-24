@@ -1,1 +1,65 @@
-/* Style Sheet */
+/* Style Sheet */body {
+	background-image: url('images/space.png');
+	background-size: contain;
+}
+
+h1 {
+	font-family: visitor;
+	font-size: 50px;
+	color: white;
+}
+
+.racetrack {
+	background-color: #014479;
+}
+
+.block {
+	width: 150px;
+	height: 150px;
+	margin: auto;
+	background-color: #014479;
+	
+}
+
+hr {
+	border-top: dotted 1px #ff0000;
+
+}
+
+.scoreboard {
+	background-color: 000000;
+	border-style: solid 1px black;
+}
+
+.player1 {
+	background-image: url('images/nyancat.GIF');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+}
+
+.player2{
+	background-image: url('images/nyanGB.gif');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 150px;
+
+}
+
+.finishLine {
+	background-image: url("images/finishlinevertical.png");
+	margin: auto;
+}
+
+.btn {
+  background-color: white;
+  text-decoration: none;
+  border: 1px solid #777;
+  padding: 10px;
+  border-radius: 3px;
+}
+
